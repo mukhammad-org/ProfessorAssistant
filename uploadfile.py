@@ -1,7 +1,5 @@
-import professorassistant
-def main():
-    infile = open(professorassistant.path,'r')
-    file_contents = infile.read()
-    infile.close()
-    print(file_contents)
+from importlib import resources
 
+def load_questions():
+    with resources.open_text("professor-assistant", "questions.txt") as f:
+        return f.read()
